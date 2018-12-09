@@ -3,11 +3,11 @@ package com.aydincalikoglu.IteratorPattern;
 import com.aydincalikoglu.Helper.IteratorType;
 import com.aydincalikoglu.Helper.MatrixIns;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
+/**
+ * Iterator Pattern
+ */
 public class OrbitData implements SpirallyIterator {
     int data[][];
     int s=0;
@@ -16,6 +16,11 @@ public class OrbitData implements SpirallyIterator {
         this.data=data;
     }
 
+    /**
+     * İstenilen Iterator Enum ile belirtilir
+     * @param typeIterator
+     * @return Iterator
+     */
     @Override
     public Iterator getIterator(IteratorType typeIterator){
         Iterator iterator = null;

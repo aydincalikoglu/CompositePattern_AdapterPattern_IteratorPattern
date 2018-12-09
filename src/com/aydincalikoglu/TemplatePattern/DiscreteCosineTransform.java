@@ -10,6 +10,8 @@ public class DiscreteCosineTransform extends Transform {
 
     @Override
     public void transform(int matrix[][]) {
+        n=matrix.length;
+        m=matrix[0].length;
         int i, j, k, l;
         double[][] dct = new double[m][n];
         double ci, cj, dct1, sum;

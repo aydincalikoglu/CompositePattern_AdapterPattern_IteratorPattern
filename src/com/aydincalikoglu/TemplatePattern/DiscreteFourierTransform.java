@@ -9,8 +9,16 @@ import java.lang.*;
  * Pattern tasarladim FFT referans aldim linkini yukarida belirttim.
  */
 public class DiscreteFourierTransform extends Transform {
+    Boolean calculateTime=false;
+    public DiscreteFourierTransform(Boolean calculateTime)
+    {
+        this.calculateTime=calculateTime;
+    }
     @Override
     public void transform(int matrix[][]) {
+        long startTime = System.currentTimeMillis();
+
+
         int n = matrix.length;
         Complex[] x = new Complex[n];
 
@@ -19,6 +27,13 @@ public class DiscreteFourierTransform extends Transform {
             x[i] = new Complex(i, 0);
             x[i] = new Complex(-2*Math.random() + 1, 0);
         }
+
+        if (calculateTime) {
+            long stopTime = System.currentTimeMillis();
+            long elapsedTime = stopTime - startTime;
+            System.out.println("Gecen Sure : " + elapsedTime);
+        }
+
         show(x, "x");
 
         // FFT of original data
@@ -36,6 +51,9 @@ public class DiscreteFourierTransform extends Transform {
         // linear convolution of x with itself
         Complex[] d = convolve(x, x);
         show(d, "d = convolve(x, x)");
+
+
+
     }
 
 

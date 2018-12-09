@@ -3,6 +3,10 @@ package com.aydincalikoglu;
 import com.aydincalikoglu.CompositePattern.Email;
 import com.aydincalikoglu.Helper.IteratorType;
 import com.aydincalikoglu.IteratorPattern.OrbitData;
+import com.aydincalikoglu.TemplatePattern.DiscreteCosineTransform;
+import com.aydincalikoglu.TemplatePattern.DiscreteFourierTransform;
+import com.aydincalikoglu.TemplatePattern.Transform;
+
 import java.util.Iterator;
 
 
@@ -50,6 +54,29 @@ public class Main {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
+        int matris[][] =
+                {
+                        {1, 2, 3, 4,1, 2, 3, 4},
+                        {5, 6, 7, 8,1, 2, 3, 4},
+                        {9, 10, 11, 12,1, 2, 3, 4},
+                        {13, 14, 15, 16,1, 2, 3, 4},
+                        {1, 2, 3, 4,1, 2, 3, 4},
+                        {5, 6, 7, 8,1, 2, 3, 4},
+                        {9, 10, 11, 12,1, 2, 3, 4},
+                        {13, 14, 15, 16,1, 2, 3, 4}
+                };
+
+        System.out.println("DCT");
+        Transform transformDCT = new DiscreteCosineTransform();
+        transformDCT.readFile("");
+        transformDCT.transform(matris);
+        transformDCT.writeFile("");
+
+        System.out.println();
+        System.out.println("DFT");
+        Transform transformDFT = new DiscreteFourierTransform(false);
+        transformDCT.readFile("");
+        transformDFT.transform(matris);
 
     }
 }

@@ -4,6 +4,9 @@ import java.lang.annotation.Repeatable;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * CompasitePattern Email
+ */
 public class Email {
     private String mailAddress;
     private String nameSurname;
